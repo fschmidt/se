@@ -14,9 +14,7 @@ public class Main {
       System.out.println("Customer: name=" + meier.getName() + " address=" + meier.getAddress());
 
       // create Employee
-      Customer mueller = new Customer();
-      mueller.setName("Müller");
-      mueller.setNumber(42);
+      Customer mueller = new CustomerBuilder().name("Müller").address("some Address").number(42).build();
 
       // show Employee
       System.out.println("Employee: name=" + mueller.getName() + " number=" + mueller.getNumber());

@@ -1,50 +1,47 @@
 	public class Employee {
-	
+
 		private java.lang.String name; 
 		private int number; 
 		private java.lang.String address; 
 		private int income; 
 		private java.lang.String qualification; 
-	
+
+		public Employee () {
+		}
 
 		public java.lang.String getName() { 
-		// ToDo
-		return this.name;
+			return this.name;
 		}
+		
 		public void setName(java.lang.String name) { 
-		// ToDo
-		this.name = name;
+			this.name = name;
 		}
 		public int getNumber() { 
-		// ToDo
-		return this.number;
+			return this.number;
 		}
+		
 		public void setNumber(int number) { 
-		// ToDo
-		this.number = number;
+			this.number = number;
 		}
 		public java.lang.String getAddress() { 
-		// ToDo
-		return this.address;
+			return this.address;
 		}
+		
 		public void setAddress(java.lang.String address) { 
-		// ToDo
-		this.address = address;
+			this.address = address;
 		}
 		public int getIncome() { 
-		// ToDo
-		return this.income;
+			return this.income;
 		}
+		
 		public void setIncome(int income) { 
-		// ToDo
-		this.income = income;
+			this.income = income;
 		}
 		public java.lang.String getQualification() { 
-		// ToDo
-		return this.qualification;
+			return this.qualification;
 		}
+		
 		public void setQualification(java.lang.String qualification) { 
-		// ToDo
-		this.qualification = qualification;
+			this.qualification = qualification;
 		}
 	} 
