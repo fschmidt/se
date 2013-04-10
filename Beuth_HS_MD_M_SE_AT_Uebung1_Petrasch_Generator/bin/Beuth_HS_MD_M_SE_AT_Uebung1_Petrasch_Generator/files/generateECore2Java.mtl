@@ -1,47 +1,59 @@
 [comment encoding = UTF-8 /]
 [module generateECore2Java('http://www.eclipse.org/emf/2002/Ecore')/]
 
+[template public generateJavaEnum(e : EEnum)]
+[comment @main /]
+[file (generateFullPathName(e), false)]
+package [e.containingPackages().name->sep('.')/];
+public enum [e.name/]{
+[for (attrib:EEnumLiteral | e.eLiterals) separator(',')]
+	[attrib.name.toUpper()/]
+[/for]
+}
+[/file]
+[/template]
+
 [template public generateJavaClass(c : EClass)]
-	[comment @main /]
-	[file ((c.name).concat('.java'), false)]
-	public class [c.name/] {
+[comment @main /]
+[file (generateFullPathName(c), false)]
+package [c.containingPackages().name->sep('.')/];
+public class [c.name/] {
 
-	[for (p:EAttribute | c.eAllAttributes)]
-		private [p.eType.instanceTypeName/] [p.name/]; [comment ToDo: Default/]
-	[/for]
-
-		public [c.name/] () {
-		}
-	[for (o:EOperation | c.eAllOperations)]
-		[operation(o)/]
-	[/for]
-
-	[for (p:EAttribute | c.eAllAttributes)]
-		[genGetterSetter(p)/]
-	[/for]
-	} 
-	[/file]
-
-	[comment @main /]
-	[file ((c.name).concat('Builder').concat('.java'), false)]
-	public class [c.name.concat('Builder')/] {
-	
-		private [c.name/] [c.name.toLowerFirst()/];
-		
-		public [c.name.concat('Builder')/] () {
-			this.[c.name.toLowerFirst()/] = new [c.name/]();
-		}
-	[for (attribute:EAttribute | c.eAllAttributes)]
-		public [c.name.concat('Builder')/] [attribute.name/] ([attribute.eType.instanceTypeName/] [attribute.name/]) {
-			[c.name.toLowerFirst()/].set[attribute.name.toUpperFirst()/]([attribute.name/]);
-			return this;
-		}
-	[/for]
-		public [c.name/] build() {
-			return [c.name.toLowerFirst()/];
-		}
+[for (p:EAttribute | c.eAllAttributes)]
+	private [p.eType.instanceTypeName/] [p.name/];
+[/for]
+	public [c.name/] () {
 	}
-	[/file]
+[for (o:EOperation | c.eAllOperations) separator('\n')]
+	[operation(o)/]
+[/for]
+
+[for (p:EAttribute | c.eAllAttributes) separator('\n')]
+	[genGetterSetter(p)/]
+[/for]
+} 
+[/file]
+
+[comment @main /]
+[file (c.containingPackages().name.replaceAll('\\.','/') + '/' + (c.name).concat('Builder').concat('.java'), false)]
+package [c.containingPackages().name->sep('.')/];
+public class [c.name.concat('Builder')/] {
+	private [c.name/] [c.name.toLowerFirst()/];
+	
+	public [c.name.concat('Builder')/] () {
+		this.[c.name.toLowerFirst()/] = new [c.name/]();
+	}
+[for (attribute:EAttribute | c.eAllAttributes)]
+	public [c.name.concat('Builder')/] [attribute.name/] ([attribute.eType.instanceTypeName/] [attribute.name/]) {
+		[c.name.toLowerFirst()/].set[attribute.name.toUpperFirst()/]([attribute.name/]);
+		return this;
+	}
+[/for]
+	public [c.name/] build() {
+		return [c.name.toLowerFirst()/];
+	}
+}
+[/file]
 [/template]
 
 [template public operation(o : EOperation)]
@@ -58,3 +70,14 @@ public void set[p.name.toString().toUpperFirst()/]([p.eType.instanceTypeName/] [
 	this.[p.name/] = [p.name/];
 }
 [/template]
+
+[template public generateFullPathName(c : EClass)]
+	[c.containingPackages().name.replaceAll('\\.','/') + '/' + (c.name).concat('.java')/]
+[/template]
+
+[template public generateFullPathName(e : EEnum)]
+	[e.containingPackages().name.replaceAll('\\.','/') + '/' + (e.name).concat('.java')/]
+[/template]
+
+[query public containingPackages(c : EClass) : Sequence(EPackage) = c.ancestors(EPackage)->reject(oclIsKindOf(EClass))/]
+[query public containingPackages(e : EEnum) : Sequence(EPackage) = e.ancestors(EPackage)->reject(oclIsKindOf(EEnum))/]

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eshop" nsURI="http://beuth-hochschule.de/MD-M/SE_AT/Uebung1/eshop"
-    nsPrefix="eshop">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="com.example.eshop" nsURI="http://beuth-hochschule.de/MD-M/SE_AT/Uebung1/eshop"
+    nsPrefix="com.example.eshop">
   <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="preferred" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -22,7 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//ShoppingCartState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="turnover" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ShoppingCartState">
+  <eClassifiers xsi:type="ecore:EEnum" name="ShoppingCartState" instanceTypeName="ShoppingCartState">
     <eLiterals name="created"/>
     <eLiterals name="ordered" value="1"/>
     <eLiterals name="delivered" value="2"/>

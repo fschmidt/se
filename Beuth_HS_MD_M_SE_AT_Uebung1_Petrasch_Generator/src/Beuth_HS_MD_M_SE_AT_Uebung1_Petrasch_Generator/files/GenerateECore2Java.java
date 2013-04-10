@@ -42,7 +42,7 @@ public class GenerateECore2Java extends AbstractAcceleoGenerator {
 	 *
 	 * @generated
 	 */
-	public static final String[] TEMPLATE_NAMES = { "generateJavaClass" };
+	public static final String[] TEMPLATE_NAMES = { "generateJavaEnum", "generateJavaClass" };
 
 	/**
      * The list of properties files from the launch parameters (Launch configuration).
