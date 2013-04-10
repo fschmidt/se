@@ -1,6 +1,15 @@
 [comment encoding = UTF-8 /]
 [module generateECore2Java('http://www.eclipse.org/emf/2002/Ecore')/]
 
+[template public generateJavaEnum(e : EEnum)]
+	[comment @main /]
+	[file ((e.name).concat('.java'), false)]
+		public enum [e.name/]{
+		
+		}
+	[/file]
+[/template]
+
 [template public generateJavaClass(c : EClass)]
 	[comment @main /]
 	[file ((c.name).concat('.java'), false)]
@@ -11,6 +20,10 @@
 		private [p.eType.instanceTypeName/] [p.name/]; [comment ToDo: Default/]
 	[/for]
 	
+		public [c.name/] () {
+
+		}	
+
 	[for (o:EOperation | c.eAllOperations)]
 		[operation(o)/]
 	[/for]

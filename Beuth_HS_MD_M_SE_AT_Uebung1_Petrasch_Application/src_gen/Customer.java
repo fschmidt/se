@@ -6,45 +6,54 @@
 		private java.util.Date creationDate; 
 		private boolean preferred; 
 	
+		public Customer () {
+
+		}	
+
 
 		public java.lang.String getName() { 
-		// ToDo
-		return this.name;
+			// ToDo
+			return this.name;
 		}
+		
 		public void setName(java.lang.String name) { 
-		// ToDo
-		this.name = name;
+			// ToDo
+			this.name = name;
 		}
 		public int getNumber() { 
-		// ToDo
-		return this.number;
+			// ToDo
+			return this.number;
 		}
+		
 		public void setNumber(int number) { 
-		// ToDo
-		this.number = number;
+			// ToDo
+			this.number = number;
 		}
 		public java.lang.String getAddress() { 
-		// ToDo
-		return this.address;
+			// ToDo
+			return this.address;
 		}
+		
 		public void setAddress(java.lang.String address) { 
-		// ToDo
-		this.address = address;
+			// ToDo
+			this.address = address;
 		}
 		public java.util.Date getCreationDate() { 
-		// ToDo
-		return this.creationDate;
+			// ToDo
+			return this.creationDate;
 		}
+		
 		public void setCreationDate(java.util.Date creationDate) { 
-		// ToDo
-		this.creationDate = creationDate;
+			// ToDo
+			this.creationDate = creationDate;
 		}
 		public boolean getPreferred() { 
-		// ToDo
-		return this.preferred;
+			// ToDo
+			return this.preferred;
 		}
+		
 		public void setPreferred(boolean preferred) { 
-		// ToDo
-		this.preferred = preferred;
+			// ToDo
+			this.preferred = preferred;
 		}
 	} 
