@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator.files;
+package de.bht.se.exercise01.generator;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class GenerateECore2Java extends AbstractAcceleoGenerator {
 	 *
 	 * @generated
 	 */
-	public static final String MODULE_FILE_NAME = "/Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator/files/generateECore2Java";
+	public static final String MODULE_FILE_NAME = "/de/bht/se/exercise01/generator/generateECore2Java";
 	
 	/**
 	 * The name of the templates that are to be generated.

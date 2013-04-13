@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="com.example.eshop" nsURI="http://beuth-hochschule.de/MD-M/SE_AT/Uebung1/eshop"
-    nsPrefix="com.example.eshop">
-  <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person">
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="de.bht.se.exercise01"
+    nsURI="http://beuth-hochschule.de/MD-M/SE_AT/Uebung1/eshop" nsPrefix="de.bht.se.exercise01">
+  <eClassifiers xsi:type="ecore:EClass" name="Customer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="preferred" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//ShoppingCart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orders" upperBound="-1"
+        eType="#//Order"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Employee" eSuperTypes="#//Person">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="income" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="administrates" upperBound="-1"
-        eType="#//ShoppingCart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrderState" interface="true">
+    <eOperations name="handle">
+      <eParameters name="order" eType="#//Order"/>
+    </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Order">
+    <eOperations name="getTotal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//OrderState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" lowerBound="1"
+        eType="#//Customer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creatingDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dueDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orderedProducts" lowerBound="1"
+        upperBound="-1" eType="#//Product"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ShoppingCart">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//ShoppingCartState"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="turnover" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ShoppingCartState" instanceTypeName="ShoppingCartState">
-    <eLiterals name="created"/>
-    <eLiterals name="ordered" value="1"/>
-    <eLiterals name="delivered" value="2"/>
-    <eLiterals name="paid" value="3"/>
-    <eLiterals name="cancelled" value="4"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PendingOrderState" eSuperTypes="#//OrderState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgressingOrderState" eSuperTypes="#//OrderState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Product" interface="true"/>
 </ecore:EPackage>

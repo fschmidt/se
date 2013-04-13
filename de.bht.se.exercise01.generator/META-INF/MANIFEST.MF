@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator Module Runtime Plug-in
-Bundle-SymbolicName: Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator
+Bundle-Name: Acceleo de.bht.se.exercise01 Module Runtime Plug-in
+Bundle-SymbolicName: de.bht.se.exercise01.generator
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator.Activator
+Bundle-Activator: de.bht.se.exercise01.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime, 
  org.eclipse.emf.ecore,
@@ -16,4 +16,4 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator.files
+Export-Package: de.bht.se.exercise01.generator

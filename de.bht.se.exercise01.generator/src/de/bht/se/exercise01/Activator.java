@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator;
+package de.bht.se.exercise01;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
@@ -21,7 +21,7 @@ public class Activator extends Plugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "Beuth_HS_MD_M_SE_AT_Uebung1_Petrasch_Generator";
+	public static final String PLUGIN_ID = "de.bht.se.exercise01.generator";
 
 	/**
 	 * The shared instance.
