@@ -1,3 +1,6 @@
+import com.example.eshop.Customer;
+import com.example.eshop.CustomerBuilder;
+
 // This class is a test driver for the generated Code (in src_gen)
 public class Main {
 
