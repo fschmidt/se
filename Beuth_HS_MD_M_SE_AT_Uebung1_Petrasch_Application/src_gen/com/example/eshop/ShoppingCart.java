@@ -1,6 +1,6 @@
 package com.example.eshop;
-public class ShoppingCart {
-
+public class ShoppingCart 
+	{
 	private ShoppingCartState state;
 	private float turnover;
 	public ShoppingCart () {

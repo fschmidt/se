@@ -17,8 +17,12 @@ public enum [e.name/]{
 [comment @main /]
 [file (generateFullPathName(c), false)]
 package [c.containingPackages().name->sep('.')/];
-public class [c.name/] {
-
+public class [c.name/] 
+[if (c.eAllSuperTypes->notEmpty())]
+	extends [c.eAllSuperTypes.name/] {
+[else]
+	{
+[/if]
 [for (p:EAttribute | c.eAllAttributes)]
 	private [p.eType.instanceTypeName/] [p.name/];
 [/for]

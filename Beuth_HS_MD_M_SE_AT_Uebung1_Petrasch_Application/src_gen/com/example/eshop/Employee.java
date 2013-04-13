@@ -1,6 +1,6 @@
 package com.example.eshop;
-public class Employee {
-
+public class Employee 
+	extends Person {
 	private java.lang.String name;
 	private int number;
 	private java.lang.String address;
