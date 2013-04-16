@@ -12,7 +12,18 @@ package de.bht.se.exercise01;
 	}
 
 	public double getTotal() { 
+		// Start of user code o.name
+		if(orderedProducts != null) {
+		   double total = 0.0d;
+		   for (Product p : orderedProducts) {
+            total += p.getPrice();
+         }
+		   return total;
+		}
+		return 0.0d;
+		// End of user code
 	}
+
 
 	public java.util.Date getCreatingDate() { 
 		return this.creatingDate;

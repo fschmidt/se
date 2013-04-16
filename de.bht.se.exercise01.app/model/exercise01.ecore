@@ -22,7 +22,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//OrderState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Product" instanceTypeName="Product"
-      interface="true"/>
+      interface="true">
+    <eOperations name="getPrice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OrderState" instanceTypeName="OrderState">
     <eLiterals name="PENDING" literal="PENDING"/>
     <eLiterals name="IN_PROGRESS" literal="IN_PROGRESS"/>

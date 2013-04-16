@@ -72,6 +72,10 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="__oUANKbKEeKNtPDPJDsMFg"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="__oUANabKEeKNtPDPJDsMFg" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_Lp9wAabSEeKDv6WpT5hVCw" type="2002">
+        <element xmi:type="ecore:EOperation" href="exercise01.ecore#//Product/getPrice"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Lp9wAqbSEeKDv6WpT5hVCw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="__oUANqbKEeKNtPDPJDsMFg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="__oUAN6bKEeKNtPDPJDsMFg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="__oUAOKbKEeKNtPDPJDsMFg"/>
@@ -207,7 +211,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="__oY4t6bKEeKNtPDPJDsMFg" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="__oY4uKbKEeKNtPDPJDsMFg" fontName="Segoe UI"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__oY4uabKEeKNtPDPJDsMFg" points="[0, 0, 137, 107]$[0, -30, 137, 77]$[-137, -30, 0, 77]$[-137, -107, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__oY4uabKEeKNtPDPJDsMFg" points="[10, 0, 115, 101]$[10, -50, 115, 51]$[-116, -50, -11, 51]$[-116, -101, -11, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__o6dIabKEeKNtPDPJDsMFg" id="(0.5,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__o6dIqbKEeKNtPDPJDsMFg" id="(0.7450980392156863,1.0)"/>
   </edges>

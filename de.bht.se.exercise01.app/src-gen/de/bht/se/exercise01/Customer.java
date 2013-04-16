@@ -11,6 +11,7 @@ package de.bht.se.exercise01;
 	}
 
 
+
 	public java.lang.String getLastName() { 
 		return this.lastName;
 	}

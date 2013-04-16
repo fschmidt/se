@@ -49,11 +49,17 @@ package [c.containingPackages().name->sep('.')/];
 [if (not c.interface)]
 	public [c.name/] () {
 	}
-[/if]
 
 [for (o:EOperation | c.eAllOperations) separator('\n')]
 	[operation(o)/]
+[/for]	
+[/if]
+
+[if (c.interface)]
+[for (o:EOperation | c.eAllOperations) separator('\n')]
+	[abstractOperation(o)/]
 [/for]
+[/if]
 
 [for (p:EAttribute | c.eAllAttributes) separator('\n')]
 	[genGetterSetter(p)/]
@@ -64,7 +70,6 @@ package [c.containingPackages().name->sep('.')/];
 [/for]
 } 
 [/file]
-
 [/template]
 
 [template public reference(r : EReference)]
@@ -77,7 +82,14 @@ private [r.eType.instanceTypeName/] [r.name.toLowerFirst()/];
 
 [template public operation(o : EOperation)]
 public [o.eType.instanceTypeName/] [o.name/]() { [comment ToDo: Params/]
+	// [protected ('o.name')]
+	// TODO auto generated method stub
+	// [/protected]
 }
+[/template]
+
+[template public abstractOperation(o : EOperation)]
+	[o.eType.instanceTypeName/] [o.name/]();
 [/template]
 
 [template public genGetterSetter(p : EAttribute)]
