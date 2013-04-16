@@ -50,12 +50,17 @@ package [c.containingPackages().name->sep('.')/];
 	public [c.name/] () {
 	}
 [/if]
+
 [for (o:EOperation | c.eAllOperations) separator('\n')]
 	[operation(o)/]
 [/for]
 
 [for (p:EAttribute | c.eAllAttributes) separator('\n')]
 	[genGetterSetter(p)/]
+[/for]
+
+[for (r:EReference | c.eReferences)]
+	[genGetterSetter(r)/]
 [/for]
 } 
 [/file]
@@ -83,6 +88,26 @@ public [p.eType.instanceTypeName/] get[ p.name.toString().toUpperFirst()/]() { [
 public void set[p.name.toString().toUpperFirst()/]([p.eType.instanceTypeName/] [p.name/]) { [comment ToDo: Params/]
 	this.[p.name/] = [p.name/];
 }
+[/template]
+
+[template public genGetterSetter(r : EReference)]
+[if (r.upperBound > 1)]
+public java.util.List<[r.eType.instanceTypeName/]> getAll[r.name.toUpperFirst()/]() { [comment ToDo: Params/]
+	return this.[r.name.toLowerFirst()/];
+}
+
+public void set(java.util.List<[r.eType.instanceTypeName/]> [r.name.toLowerFirst()/]) { [comment ToDo: Params/]
+	this.[r.name/] = [r.name.toLowerFirst()/];
+}
+[else]	
+public [r.eType.instanceTypeName/] get[r.name.toUpperFirst()/]() { [comment ToDo: Params/]
+	return this.[r.name.toLowerFirst()/];
+}
+
+public void set[r.name.toUpperFirst()/] ([r.eType.instanceTypeName/] [r.name.toLowerFirst()/]) { [comment ToDo: Params/]
+	this.[r.name.toLowerFirst()/] = [r.name.toLowerFirst()/];
+}
+[/if]
 [/template]
 
 [template public generateFullPathName(c : EClass)]

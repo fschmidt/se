@@ -3,13 +3,14 @@ package de.bht.se.exercise01;
 	{
 	private java.util.Date creatingDate;
 	private java.util.Date dueDate;
-	private  state;
+	private OrderState state;
 	private Customer customer;
 	
 	private java.util.List<Product> orderedProducts;
 	
 	public Order () {
 	}
+
 	public double getTotal() { 
 	}
 
@@ -29,11 +30,28 @@ package de.bht.se.exercise01;
 		this.dueDate = dueDate;
 	}
 
-	public  getState() { 
+	public OrderState getState() { 
 		return this.state;
 	}
 	
-	public void setState( state) { 
+	public void setState(OrderState state) { 
 		this.state = state;
 	}
+
+	public Customer getCustomer() { 
+		return this.customer;
+	}
+	
+	public void setCustomer (Customer customer) { 
+		this.customer = customer;
+	}
+	
+	public java.util.List<Product> getAllOrderedProducts() { 
+		return this.orderedProducts;
+	}
+	
+	public void set(java.util.List<Product> orderedProducts) { 
+		this.orderedProducts = orderedProducts;
+	}
+	
 } 

@@ -5,12 +5,11 @@ package de.bht.se.exercise01;
 	private java.util.Date creationDate;
 	private boolean preferred;
 	private java.lang.String firstName;
-	private java.util.List<org.eclipse.emf.ecore.impl.DynamicEObjectImpl@cfd139 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@1b10810 (name: OclInvalid_Class) (instanceClassName: null) (abstract: false, interface: false))> has;
-	
 	private java.util.List<Order> orders;
 	
 	public Customer () {
 	}
+
 
 	public java.lang.String getLastName() { 
 		return this.lastName;
@@ -43,4 +42,13 @@ package de.bht.se.exercise01;
 	public void setFirstName(java.lang.String firstName) { 
 		this.firstName = firstName;
 	}
+
+	public java.util.List<Order> getAllOrders() { 
+		return this.orders;
+	}
+	
+	public void set(java.util.List<Order> orders) { 
+		this.orders = orders;
+	}
+	
 } 
