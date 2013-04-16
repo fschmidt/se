@@ -22,6 +22,10 @@ public class [c.name/] {
 [for (p:EAttribute | c.eAllAttributes)]
 	private [p.eType.instanceTypeName/] [p.name/];
 [/for]
+[for (r:EReference | c.eReferences)]
+	[reference(r)/]
+[/for]
+
 	public [c.name/] () {
 	}
 [for (o:EOperation | c.eAllOperations) separator('\n')]
@@ -34,26 +38,14 @@ public class [c.name/] {
 } 
 [/file]
 
-[comment @main /]
-[file (c.containingPackages().name.replaceAll('\\.','/') + '/' + (c.name).concat('Builder').concat('.java'), false)]
-package [c.containingPackages().name->sep('.')/];
-public class [c.name.concat('Builder')/] {
-	private [c.name/] [c.name.toLowerFirst()/];
-	
-	public [c.name.concat('Builder')/] () {
-		this.[c.name.toLowerFirst()/] = new [c.name/]();
-	}
-[for (attribute:EAttribute | c.eAllAttributes)]
-	public [c.name.concat('Builder')/] [attribute.name/] ([attribute.eType.instanceTypeName/] [attribute.name/]) {
-		[c.name.toLowerFirst()/].set[attribute.name.toUpperFirst()/]([attribute.name/]);
-		return this;
-	}
-[/for]
-	public [c.name/] build() {
-		return [c.name.toLowerFirst()/];
-	}
-}
-[/file]
+[/template]
+
+[template public reference(r : EReference)]
+[if (r.upperBound > 1)]
+private java.util.List<[r.eType.instanceTypeName/]> [r.name.toLowerFirst()/];
+[else]	
+private [r.eType.instanceTypeName/] [r.name.toLowerFirst()/];
+[/if]
 [/template]
 
 [template public operation(o : EOperation)]

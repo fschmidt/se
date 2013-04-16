@@ -18,6 +18,13 @@ public enum [e.name/]{
 [file (generateFullPathName(c), false)]
 package [c.containingPackages().name->sep('.')/];
 public class [c.name/] 
+
+[for (st : EClass | c.eAllSuperTypes)]
+	[if (st.interface = 0)]
+		block_expression
+	[/if]
+[/for]
+
 [if (c.eAllSuperTypes->notEmpty())]
 	extends [c.eAllSuperTypes.name/] {
 [else]
