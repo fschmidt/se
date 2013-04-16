@@ -17,17 +17,36 @@ public enum [e.name/]{
 [comment @main /]
 [file (generateFullPathName(c), false)]
 package [c.containingPackages().name->sep('.')/];
-public class [c.name/] 
+[if (c.interface)]
+	public interface [c.name/] 
+[else]
+	public class [c.name/] 
+[/if]
 [if (c.eAllSuperTypes->notEmpty())]
-	extends [c.eAllSuperTypes.name/] {
+	[for (extend : EClass | c.eAllSuperTypes)]
+		[if (not extend.interface)]
+			extends [extend.name/]
+		[/if]
+	[/for]
+	[if (c.eAllSuperTypes.interface->exists(true))]
+			implements
+	[for (extend : EClass | c.eAllSuperTypes) separator (', ')]
+		[if (extend.interface)]
+			[extend.name/]
+		[/if]
+	[/for]
+	[/if]
+	{
 [else]
 	{
 [/if]
 [for (p:EAttribute | c.eAllAttributes)]
 	private [p.eType.instanceTypeName/] [p.name/];
 [/for]
-	public [c.name/] () {
+	[if (not c.interface)]
+		public [c.name/] () {
 	}
+	[/if]
 [for (o:EOperation | c.eAllOperations) separator('\n')]
 	[operation(o)/]
 [/for]

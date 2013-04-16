@@ -30,7 +30,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_43LHkaQtEeKNaow_seEXLg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="exercise01.ecore#//Customer"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_43LHkqQtEeKNaow_seEXLg" x="15" y="30" height="108"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_43LHkqQtEeKNaow_seEXLg" x="5" y="15" height="108"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_YARz8KQ2EeKOpb8CWI_nDQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_YASbAKQ2EeKOpb8CWI_nDQ" type="4001"/>
@@ -50,7 +50,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_YARz8aQ2EeKOpb8CWI_nDQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="exercise01.ecore#//OrderState"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YARz8qQ2EeKOpb8CWI_nDQ" x="240" y="185" width="158"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YARz8qQ2EeKOpb8CWI_nDQ" x="315" y="185" width="158"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ZFz4oKQ2EeKOpb8CWI_nDQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_ZF1GwKQ2EeKOpb8CWI_nDQ" type="4001"/>
@@ -78,7 +78,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_ZFz4oaQ2EeKOpb8CWI_nDQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="exercise01.ecore#//Order"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZFz4oqQ2EeKOpb8CWI_nDQ" x="240" y="30" width="158" height="108"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZFz4oqQ2EeKOpb8CWI_nDQ" x="335" y="15" width="243" height="113"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_sSpg8KQ2EeKOpb8CWI_nDQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_sSqIAKQ2EeKOpb8CWI_nDQ" type="4001"/>
@@ -94,7 +94,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_sSpg8aQ2EeKOpb8CWI_nDQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="exercise01.ecore#//PendingOrderState"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sSpg8qQ2EeKOpb8CWI_nDQ" x="160" y="260" width="148"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sSpg8qQ2EeKOpb8CWI_nDQ" x="225" y="310" width="148"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_vuO3AKQ2EeKOpb8CWI_nDQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_vuPeEKQ2EeKOpb8CWI_nDQ" type="4001"/>
@@ -110,7 +110,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_vuO3AaQ2EeKOpb8CWI_nDQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="exercise01.ecore#//ProgressingOrderState"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vuO3AqQ2EeKOpb8CWI_nDQ" x="340" y="260" width="166"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vuO3AqQ2EeKOpb8CWI_nDQ" x="415" y="310" width="166"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_0R1voKQ3EeKOpb8CWI_nDQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_0R2WsKQ3EeKOpb8CWI_nDQ" type="4001"/>
@@ -126,7 +126,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_0R1voaQ3EeKOpb8CWI_nDQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="exercise01.ecore#//Product"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0R1voqQ3EeKOpb8CWI_nDQ" x="515" y="70"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0R1voqQ3EeKOpb8CWI_nDQ" x="530" y="210"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_42aSkaQtEeKNaow_seEXLg"/>
   <element xmi:type="ecore:EPackage" href="exercise01.ecore#/"/>
