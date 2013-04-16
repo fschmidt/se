@@ -1,6 +1,6 @@
 package de.bht.se.exercise01;
-public class Order {
-
+	public class Order 
+	{
 	private java.util.Date creatingDate;
 	private java.util.Date dueDate;
 	private  state;
@@ -8,7 +8,6 @@ public class Order {
 	
 	private java.util.List<Product> orderedProducts;
 	
-
 	public Order () {
 	}
 	public double getTotal() { 

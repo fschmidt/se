@@ -1,6 +1,6 @@
 package de.bht.se.exercise01;
-public class Customer {
-
+	public class Customer 
+	{
 	private java.lang.String lastName;
 	private java.util.Date creationDate;
 	private boolean preferred;
@@ -9,7 +9,6 @@ public class Customer {
 	
 	private java.util.List<Order> orders;
 	
-
 	public Customer () {
 	}
 
