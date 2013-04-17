@@ -3,7 +3,6 @@ package com.example.eshop;
 
 	    extends Person
 
-		implements ITest1, ITest2
 	{
 
 	private java.lang.String name;
@@ -12,11 +11,6 @@ package com.example.eshop;
 	private int income;
 	private java.lang.String qualification;
 		public Employee () {
-	}
-	public java.lang.String Fab1() { 
-	}
-
-	public int fab2() { 
 	}
 
 	public java.lang.String getName() { 

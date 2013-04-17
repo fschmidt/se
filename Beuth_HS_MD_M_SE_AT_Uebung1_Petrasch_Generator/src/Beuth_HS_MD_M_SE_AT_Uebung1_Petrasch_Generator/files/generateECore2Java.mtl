@@ -23,11 +23,11 @@ package [c.containingPackages().name->sep('.')/];
 	public class [c.name/] 
 [/if]
 
-[if (c.eAllSuperTypes->select(not interface)->notEmpty())] [comment supertypes /]
+[if (not c.eAllSuperTypes->select(not interface)->isEmpty())] [comment supertypes /]
 	    extends [c.eAllSuperTypes->select(not interface).name->sep(', ')/]
 [/if]
 
-[if (c.eAllSuperTypes.interface->exists(true))] [comment interfaces /]
+[if (not c.eAllSuperTypes->select(interface)->isEmpty())] [comment interfaces /]
 		implements [c.eAllSuperTypes->select(interface).name->sep(', ')/]
 [/if]
 	{
@@ -50,6 +50,7 @@ package [c.containingPackages().name->sep('.')/];
 [/file]
 
 [comment @main /]
+[if (not (c.interface or c.abstract))]
 [file (c.containingPackages().name.replaceAll('\\.','/') + '/' + (c.name).concat('Builder').concat('.java'), false)]
 package [c.containingPackages().name->sep('.')/];
 public class [c.name.concat('Builder')/] {
@@ -69,10 +70,14 @@ public class [c.name.concat('Builder')/] {
 	}
 }
 [/file]
+[/if]
 [/template]
 
 [template public operation(o : EOperation)]
 public [o.eType.instanceTypeName/] [o.name/]() { [comment ToDo: Params/]
+	// [protected ('o.name')]
+	// TODO auto generated method stub
+	// [/protected]
 }
 [/template]
 

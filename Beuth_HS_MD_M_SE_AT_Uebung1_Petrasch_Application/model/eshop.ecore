@@ -14,7 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="administrates" upperBound="-1"
         eType="#//ShoppingCart"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person" instanceTypeName="ITest1" eSuperTypes="#//ITest1 #//ITest2">
+  <eClassifiers xsi:type="ecore:EClass" name="Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,11 +29,5 @@
     <eLiterals name="delivered" value="2"/>
     <eLiterals name="paid" value="3"/>
     <eLiterals name="cancelled" value="4"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ITest2" interface="true">
-    <eOperations name="fab2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ITest1" interface="true">
-    <eOperations name="Fab1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

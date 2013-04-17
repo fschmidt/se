@@ -2,18 +2,12 @@ package com.example.eshop;
 	public class Person 
 
 
-		implements ITest1, ITest2
 	{
 
 	private java.lang.String name;
 	private int number;
 	private java.lang.String address;
 		public Person () {
-	}
-	public java.lang.String Fab1() { 
-	}
-
-	public int fab2() { 
 	}
 
 	public java.lang.String getName() { 
