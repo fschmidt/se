@@ -1,6 +1,8 @@
 package de.bht.se.exercise01;
 	public class Customer 
+
 	{
+
 	private java.lang.String lastName;
 	private java.util.Date creationDate;
 	private boolean preferred;
@@ -9,7 +11,6 @@ package de.bht.se.exercise01;
 	
 	public Customer () {
 	}
-
 
 
 	public java.lang.String getLastName() { 

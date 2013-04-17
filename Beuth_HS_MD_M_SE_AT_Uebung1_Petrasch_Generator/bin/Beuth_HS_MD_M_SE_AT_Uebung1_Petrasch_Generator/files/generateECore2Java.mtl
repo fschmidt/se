@@ -22,24 +22,16 @@ package [c.containingPackages().name->sep('.')/];
 [else]
 	public class [c.name/] 
 [/if]
-[if (c.eAllSuperTypes->notEmpty())]
-	[for (extend : EClass | c.eAllSuperTypes)]
-		[if (not extend.interface)]
-			extends [extend.name/]
-		[/if]
-	[/for]
-	[if (c.eAllSuperTypes.interface->exists(true))]
-			implements
-	[for (extend : EClass | c.eAllSuperTypes) separator (', ')]
-		[if (extend.interface)]
-			[extend.name/]
-		[/if]
-	[/for]
-	[/if]
-	{
-[else]
-	{
+
+[if (c.eAllSuperTypes->select(not interface)->notEmpty())] [comment supertypes /]
+	    extends [c.eAllSuperTypes->select(not interface).name->sep(', ')/]
 [/if]
+
+[if (c.eAllSuperTypes.interface->exists(true))] [comment interfaces /]
+		implements [c.eAllSuperTypes->select(interface).name->sep(', ')/]
+[/if]
+	{
+
 [for (p:EAttribute | c.eAllAttributes)]
 	private [p.eType.instanceTypeName/] [p.name/];
 [/for]

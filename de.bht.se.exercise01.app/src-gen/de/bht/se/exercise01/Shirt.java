@@ -1,9 +1,9 @@
 package de.bht.se.exercise01;
 	public class Shirt 
-			implements
-			Product
-, 			Wearable
+
+		implements Product, Wearable
 	{
+
 	public Shirt () {
 	}
 
@@ -12,7 +12,6 @@ package de.bht.se.exercise01;
 		return 1.0d;
 		// End of user code
 	}
-
 
 
 } 

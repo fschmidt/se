@@ -1,6 +1,8 @@
 package de.bht.se.exercise01;
 	public class Order 
+
 	{
+
 	private java.util.Date creatingDate;
 	private java.util.Date dueDate;
 	private OrderState state;
@@ -23,7 +25,6 @@ package de.bht.se.exercise01;
 		return 0.0d;
 		// End of user code
 	}
-
 
 	public java.util.Date getCreatingDate() { 
 		return this.creatingDate;
