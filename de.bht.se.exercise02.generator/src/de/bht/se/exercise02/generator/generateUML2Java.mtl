@@ -1,0 +1,90 @@
+[comment encoding = UTF-8 /]
+[module generateUML2Java('http://www.eclipse.org/uml2/4.0.0/UML')]
+
+[template public generateElement(model : Model)]
+[comment @main/]
+[for(class:Class | model.ownedElement->select(oclIsTypeOf(Class)))]
+
+	[if (not ((class.name) = ''))]								
+		[file (class._package.name + (class.name).concat('.java'), false)]
+			
+			[comment: Inhalt der Java-Datei/] 
+			public class [class.name/]
+
+				[comment d) short select/]
+				[if (not class.general ->isEmpty())]
+				extends
+				[class.general.name->sep(', ')/]
+				[/if]
+	
+				[comment d) short select/]
+				[if (not class.interfaceRealization->isEmpty())]
+				implements
+				[class.interfaceRealization.name->sep('')/]
+				[/if]
+ {
+			[comment: Auflisten aller Attribute/]
+			[for (p:Property | class.getAllAttributes())]
+				[comment ToDo: Visibility/]
+				private [attribute(p)/]; [comment ToDo: Default/]
+			[/for]
+
+		
+			[for (o:Operation | class.getAllOperations())]
+				[operation(o)/]
+			[/for]
+	
+			[for (p:Property | class.getAllAttributes())]
+				[getterSetter(p)/]
+			[/for]
+		} 
+		[/file]
+[/if]
+[/for]	
+[/template]
+
+[template public parameterList(op : Operation, delimiter :String)]
+[for (param : Parameter | op.ownedParameter->select(name.strcmp('return')<>0))separator(delimiter)]
+	[SingleParameter(param)/];
+[/for]
+[/template]
+
+[template public SingleParameter(param : Parameter)]
+	[param.type.name/] [param.name/];
+[/template]
+
+
+
+[comment][template public generateFullPathName(c : Class)]
+	[c._package.name + (c.name).concat('.java')/]
+[/template]
+
+[template public generateFullPathName(e : Enumeration)]
+	[e._package.name + (e.name).concat('.java')/]
+[/template][/comment]
+
+[template public attribute (prop : Property) ]
+	[if (prop.upperBound() = -1)]
+		['java.util.Collection<' + prop.type.name + '>'/] [prop.name/];
+	[else]
+		[prop.type.name/] [prop.name/];
+	[/if]
+[/template]
+
+[template public operation (operation : Operation) ]
+public [operation.type.name/] [operation.name/]([parameterList(operation, ', ')/]) {
+	// [protected ('operation.name')]
+	// TODO auto generated method stub
+	// [/protected]
+}
+[/template]
+
+[template public getterSetter (property : Property) ]
+public [property.type.name/] get[ property.name.toUpperFirst()/]() {
+	return this.[property.name/];
+}
+
+public void set[property.name.toUpperFirst()/]([property.type.name/] [property.name/]) { 
+	this.[property.name/] = [property.name/];
+}
+[/template]

@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package de.bht.se.exercise01;
+package de.bht.se.exercise02;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
@@ -21,7 +21,7 @@ public class Activator extends Plugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "de.bht.se.exercise01.generator";
+	public static final String PLUGIN_ID = "de.bht.se.exercise02.generator";
 
 	/**
 	 * The shared instance.
