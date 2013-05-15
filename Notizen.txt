@@ -1,0 +1,7 @@
+***********************************************************************
+********		SE AUFGABE 02 NOTIZEN		      *********
+***********************************************************************
+
+- Bei der Bearbeitung der Aufgaben traten keine größeren Probleme auf
+
+- Erzeugung von Assoziationen im Papyrus Editor erzeugte gelegentlich mehrere Assoziationen im UML, was zur Erzeugung von mehrfachen Attributen für die entsprechende Assoziation sorgte. Entfernen der überflüssigen Kopien im UML löste das Problem.
