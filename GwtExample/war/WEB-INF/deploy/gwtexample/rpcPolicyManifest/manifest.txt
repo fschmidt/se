@@ -1,0 +1,3 @@
+# Module gwtexample
+# RPC service class, partial path of RPC policy file
+de.bht.se.gwt.Example.client.GreetingService, D20E76858457D31953A89053201E2D7A.gwt.rpc

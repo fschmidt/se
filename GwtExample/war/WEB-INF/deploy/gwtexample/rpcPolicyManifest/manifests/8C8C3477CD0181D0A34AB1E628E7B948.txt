@@ -1,0 +1,2 @@
+serviceClass: de.bht.se.gwt.Example.client.GreetingService
+path: D20E76858457D31953A89053201E2D7A.gwt.rpc
