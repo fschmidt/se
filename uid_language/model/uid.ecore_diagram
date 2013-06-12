@@ -292,14 +292,16 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_tElcwM3OEeKYh85TPZ-eaA" type="4003" source="_8sXUkL1UEeK8E7c_txxAog" target="_7ytvyr1UEeK8E7c_txxAog">
     <children xmi:type="notation:DecorationNode" xmi:id="_tEmD0M3OEeKYh85TPZ-eaA" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_tEmD0c3OEeKYh85TPZ-eaA" x="8" y="21"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_tEmD0c3OEeKYh85TPZ-eaA" x="5" y="13"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_tEmD0s3OEeKYh85TPZ-eaA" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_tEmD083OEeKYh85TPZ-eaA" x="-21" y="-16"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_tEmD083OEeKYh85TPZ-eaA" x="7" y="-10"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_tElcwc3OEeKYh85TPZ-eaA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="uid.ecore#//App/hasIE"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tElcws3OEeKYh85TPZ-eaA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tElcws3OEeKYh85TPZ-eaA" points="[0, 0, 96, -37]$[-96, 0, 0, -37]$[-96, 35, 0, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_55H3QNNVEeKR1uGNkCxNRA" id="(0.0,0.847457627118644)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_641AwNNVEeKR1uGNkCxNRA" id="(0.7989949748743719,0.024390243902439025)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_fNeGgM3PEeKYh85TPZ-eaA" type="4004" source="_XASCoM3PEeKYh85TPZ-eaA" target="_hRfq8NM5EeKC-JYmn_x5BA">
     <styles xmi:type="notation:FontStyle" xmi:id="_fNeGgc3PEeKYh85TPZ-eaA" fontName="Ubuntu"/>
