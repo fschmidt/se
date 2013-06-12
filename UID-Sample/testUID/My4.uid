@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uid:App xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uid="http://uid/1.0" name="MainApp">
   <has ie="//@hasIE.1" Name="openWin2"/>
-  <hasIE xsi:type="uid:Window" name="window1" main="true">
-    <hasElements xsi:type="uid:Container" name="MainContainer" AllignHorizontal="true">
-      <hasElements xsi:type="uid:Button" ieAssoc="//@has.0" name="MainButton" text="Button1"/>
-      <hasElements xsi:type="uid:Button" name="SubButton" text="Button2"/>
-    </hasElements>
-    <hasElements xsi:type="uid:Container" name="subCont">
-      <hasElements xsi:type="uid:Label" name="checkLabel" text="My Box"/>
-      <hasElements xsi:type="uid:CheckBox" name="checkme" text="Check Me!"/>
+  <hasIE xsi:type="uid:Window" name="Window1" main="true">
+    <hasElements xsi:type="uid:Container" name="container1">
+      <hasElements xsi:type="uid:Container" name="MainContainer" AllignHorizontal="true">
+        <hasElements xsi:type="uid:Button" ieAssoc="//@has.0" name="MainButton" text="Button1"/>
+        <hasElements xsi:type="uid:Button" name="SubButton" text="Button2"/>
+      </hasElements>
+      <hasElements xsi:type="uid:Container" name="subCont" AllignHorizontal="true">
+        <hasElements xsi:type="uid:Label" name="checkLabel" text="My Box"/>
+        <hasElements xsi:type="uid:CheckBox" name="checkme" text="Check Me!"/>
+      </hasElements>
     </hasElements>
   </hasIE>
-  <hasIE xsi:type="uid:Window" name="Win2"/>
+  <hasIE xsi:type="uid:Window" name="Window2">
+    <hasElements xsi:type="uid:Container" name="mainContainer" AllignHorizontal="true">
+      <hasElements xsi:type="uid:Container" name="firstCont">
+        <hasElements xsi:type="uid:Button" name="MainButton" text="Button1"/>
+        <hasElements xsi:type="uid:Button" name="SubButton" text="Button2"/>
+      </hasElements>
+      <hasElements xsi:type="uid:Container" name="subCont">
+        <hasElements xsi:type="uid:Label" name="checkLabel" text="My Box"/>
+        <hasElements xsi:type="uid:CheckBox" name="checkme" text="Check Me!"/>
+      </hasElements>
+    </hasElements>
+  </hasIE>
 </uid:App>

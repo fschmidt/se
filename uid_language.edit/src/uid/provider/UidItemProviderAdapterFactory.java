@@ -325,6 +325,29 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uid.unVisibeleAssoc} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected unVisibeleAssocItemProvider unVisibeleAssocItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.unVisibeleAssoc}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createunVisibeleAssocAdapter() {
+		if (unVisibeleAssocItemProvider == null) {
+			unVisibeleAssocItemProvider = new unVisibeleAssocItemProvider(this);
+		}
+
+		return unVisibeleAssocItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,6 +457,7 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 		if (uieItemProvider != null) uieItemProvider.dispose();
 		if (containerItemProvider != null) containerItemProvider.dispose();
 		if (labelItemProvider != null) labelItemProvider.dispose();
+		if (unVisibeleAssocItemProvider != null) unVisibeleAssocItemProvider.dispose();
 	}
 
 }

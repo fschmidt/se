@@ -541,6 +541,44 @@ public interface UidPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link uid.impl.unVisibeleAssocImpl <em>un Visibele Assoc</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.unVisibeleAssocImpl
+	 * @see uid.impl.UidPackageImpl#getunVisibeleAssoc()
+	 * @generated
+	 */
+	int UN_VISIBELE_ASSOC = 11;
+
+	/**
+	 * The feature id for the '<em><b>Ie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UN_VISIBELE_ASSOC__IE = IE_ASSOC__IE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UN_VISIBELE_ASSOC__NAME = IE_ASSOC__NAME;
+
+	/**
+	 * The number of structural features of the '<em>un Visibele Assoc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UN_VISIBELE_ASSOC_FEATURE_COUNT = IE_ASSOC_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link uid.Window <em>Window</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -805,6 +843,16 @@ public interface UidPackage extends EPackage {
 	EAttribute getLabel_Text();
 
 	/**
+	 * Returns the meta object for class '{@link uid.unVisibeleAssoc <em>un Visibele Assoc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>un Visibele Assoc</em>'.
+	 * @see uid.unVisibeleAssoc
+	 * @generated
+	 */
+	EClass getunVisibeleAssoc();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1047,6 +1095,16 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LABEL__TEXT = eINSTANCE.getLabel_Text();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.unVisibeleAssocImpl <em>un Visibele Assoc</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.unVisibeleAssocImpl
+		 * @see uid.impl.UidPackageImpl#getunVisibeleAssoc()
+		 * @generated
+		 */
+		EClass UN_VISIBELE_ASSOC = eINSTANCE.getunVisibeleAssoc();
 
 	}
 

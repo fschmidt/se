@@ -112,6 +112,10 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 				return createLabelAdapter();
 			}
 			@Override
+			public Adapter caseunVisibeleAssoc(unVisibeleAssoc object) {
+				return createunVisibeleAssocAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -282,6 +286,20 @@ public class UidAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLabelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uid.unVisibeleAssoc <em>un Visibele Assoc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uid.unVisibeleAssoc
+	 * @generated
+	 */
+	public Adapter createunVisibeleAssocAdapter() {
 		return null;
 	}
 

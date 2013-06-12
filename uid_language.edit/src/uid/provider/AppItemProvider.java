@@ -187,6 +187,11 @@ public class AppItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(UidPackage.Literals.APP__HAS,
+				 UidFactory.eINSTANCE.createunVisibeleAssoc()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(UidPackage.Literals.APP__HAS_IE,
 				 UidFactory.eINSTANCE.createIE()));
 

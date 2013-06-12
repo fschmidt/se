@@ -67,6 +67,7 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 			case UidPackage.UIE: return createUIE();
 			case UidPackage.CONTAINER: return createContainer();
 			case UidPackage.LABEL: return createLabel();
+			case UidPackage.UN_VISIBELE_ASSOC: return createunVisibeleAssoc();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -180,6 +181,16 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	public Label createLabel() {
 		LabelImpl label = new LabelImpl();
 		return label;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public unVisibeleAssoc createunVisibeleAssoc() {
+		unVisibeleAssocImpl unVisibeleAssoc = new unVisibeleAssocImpl();
+		return unVisibeleAssoc;
 	}
 
 	/**

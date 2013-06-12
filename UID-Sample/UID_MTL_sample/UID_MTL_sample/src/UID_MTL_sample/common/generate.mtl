@@ -17,18 +17,17 @@
 
 class [anApp.name.toUpperFirst()/]{
 
-public static void main(String [getBrackets()/] args) {
-
-[for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
-[if (window.main)]
-   [window.name/] [window.name.toString().toLowerFirst()/] = new [window.name/]();
+	public static void main(String [getBrackets()/] args) {
+	
+	[for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
+	[if (window.main)]
+    [window.name/] [window.name.toString().toLowerFirst()/] = new [window.name/]();
 	[window.name.toString().toLowerFirst()/].setVisible(true);
-[/if]
-[/for] 
-
+	[/if]
+	[/for] 
+	
+	}
 }
-}
-
 [/file]
 
 [for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
@@ -38,8 +37,6 @@ public static void main(String [getBrackets()/] args) {
 
 
 [template public generateWindow(window : Window)]
-
-
 [file (window.name+'.java', false, 'UTF-8')]
 
 import java.awt.event.KeyEvent;
@@ -47,6 +44,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Event;
 import java.awt.GridBagLayout;
+import javax.swing.BoxLayout;
 
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
@@ -59,9 +57,6 @@ import javax.swing.JMenu;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JButton;
-
-import sun.awt.HorizBagLayout;
-import sun.awt.VerticalBagLayout;
 
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -78,34 +73,29 @@ public  [window.name/] () {
 	navPanel.setLayout(new GridBagLayout());
 	this.setContentPane(navPanel);
 	this.setTitle("[window.name/]");
+	BoxLayout bl;
 [for (container : Container | window.hasElements->select(oclIsTypeOf(Container)))]
 	navPanel.add([container.name.toLowerFirst()/]);
 	[generateContainer(container)/]
 [/for]
-
-
-
-[for (ieAssoc: IEAssoc| window.ieAssoc)]
-    [ieAssoc.ie.name.toLowerFirst()/]_[i/] = new JButton();
-    [ieAssoc.ie.name.toLowerFirst()/]_[i/].setText("[ieAssoc.ie.name/]");
-
-    [ieAssoc.ie.name.toLowerFirst()/]_[i/].addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-			[ieAssoc.ie.name/] [ieAssoc.ie.name.toLowerFirst()/] = new [ieAssoc.ie.name/]();
- [ieAssoc.ie.name.toLowerFirst()/].setVisible (true);
-        }
-      }
-    );
-
-     navPanel.add([ieAssoc.ie.name.toLowerFirst()/]_[i/]);
-
-
-[/for]
-
-
-}
+[generateAssoc(window)/]
+	}	
 }
 [/file]
+[/template]
+
+[template public generateAssoc (element : IE) ]
+[for (ieAssoc: IEAssoc| element.ieAssoc)]
+	[if (element.oclIsTypeOf(Button) and ieAssoc.ie.oclIsTypeOf(Window))]
+[element.name.toLowerFirst()/].addActionListener(new ActionListener() {
+  public void actionPerformed(ActionEvent e) {
+		[ieAssoc.ie.name/] [ieAssoc.ie.name.toLowerFirst()/] = new [ieAssoc.ie.name/]();
+		[ieAssoc.ie.name.toLowerFirst()/].setVisible(true);
+    }
+  }
+);
+	[/if]
+[/for]
 [/template]
 
 [template public generateVariable (iElement : IE) ]
@@ -134,17 +124,23 @@ private JLabel [iElement.name.toLowerFirst()/] = new JLabel("[iElement.oclAsType
 [query public getBrackets() : String = '[]'/]
 
 [template public generateContainer (container : Container) ]
-[if (container.AllignHorizontal)]
-// [container.name.toLowerFirst()/].setLayout(new HorizBagLayout());
-[else]
-// [container.name.toLowerFirst()/].setLayout(new VerticalBagLayout());
-[/if]
+[setLabel(container)/]
+[generateAssoc(container)/]
 [for (iElement : UIE | container.hasElements)]
 	[if (iElement.oclIsTypeOf(Container))]
 [generateContainer(iElement.oclAsType(Container))/]
  	[else]
-[container.name.toLowerFirst()/].add([iElement.name.toLowerFirst()/]);
+[generateAssoc(iElement)/]
 	[/if]
+[container.name.toLowerFirst()/].add([iElement.name.toLowerFirst()/]);
 [/for]
+[/template]
 
+[template public setLabel (container : Container) ]
+[if (container.AllignHorizontal)]
+bl = new BoxLayout([container.name.toLowerFirst()/], BoxLayout.X_AXIS);
+[else]
+bl = new BoxLayout([container.name.toLowerFirst()/], BoxLayout.Y_AXIS);
+[/if]
+[container.name.toLowerFirst()/].setLayout(bl);
 [/template]
