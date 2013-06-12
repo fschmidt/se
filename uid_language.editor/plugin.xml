@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="uid.presentation.UidModelWizardID"
+            name="%_UI_UidModelWizard_label"
+            class="uid.presentation.UidModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UidModelFile.gif">
+         <description>%_UI_UidModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="uid.presentation.UidEditorID"
+            name="%_UI_UidEditor_label"
+            icon="icons/full/obj16/UidModelFile.gif"
+            extensions="uid"
+            class="uid.presentation.UidEditor"
+            contributorClass="uid.presentation.UidActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

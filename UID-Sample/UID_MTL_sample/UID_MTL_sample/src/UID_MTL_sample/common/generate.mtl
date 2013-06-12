@@ -1,0 +1,104 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://uid/1.0')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param anApp
+ */]
+[template public generateElement(anApp : App)]
+[comment @main/]
+
+
+[file (anApp.name+'.java', false, 'UTF-8')]
+
+class Main{
+
+public static void main(String [getBrackets()/] args) {
+
+[for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
+[if (window.main)]
+   [window.name/] [window.name.toString().toLowerFirst()/] = new [window.name/]();
+[window.name.toString().toLowerFirst()/].setVisible(true);
+[/if]
+[/for] 
+
+
+}
+}
+
+[/file]
+
+[for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
+   [generateWindow(window)/]
+[/for] 
+[/template]
+
+
+[template public generateWindow(window : Window)]
+
+
+[file (window.name+'.java', false, 'UTF-8')]
+
+import java.awt.event.KeyEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Event;
+import java.awt.GridBagLayout;
+
+import javax.swing.KeyStroke;
+import javax.swing.JPanel;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+
+import java.awt.Toolkit;
+import java.util.ArrayList;
+
+public final class [window.name/] extends JFrame {
+
+private JPanel contentPanel = new JPanel();
+private JPanel navPanel = new JPanel();
+
+[for (ieAssoc: IEAssoc| window.ieAssoc)]
+private JButton [ieAssoc.ie.name.toLowerFirst()/]_[i/];
+[/for]
+
+
+public  [window.name/] () {
+
+this.setSize(400, 300);
+navPanel.setLayout(new GridBagLayout());
+this.setContentPane(navPanel);
+
+        setTitle("[window.name/]");
+[for (ieAssoc: IEAssoc| window.ieAssoc)]
+    [ieAssoc.ie.name.toLowerFirst()/]_[i/] = new JButton();
+    [ieAssoc.ie.name.toLowerFirst()/]_[i/].setText("[ieAssoc.ie.name/]");
+
+    [ieAssoc.ie.name.toLowerFirst()/]_[i/].addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+			[ieAssoc.ie.name/] [ieAssoc.ie.name.toLowerFirst()/] = new [ieAssoc.ie.name/]();
+ [ieAssoc.ie.name.toLowerFirst()/].setVisible (true);
+        }
+      }
+    );
+
+     navPanel.add([ieAssoc.ie.name.toLowerFirst()/]_[i/]);
+
+
+[/for]
+
+
+}
+}
+[/file]
+[/template]
+
+[query public getBrackets() : String = '[]'/]

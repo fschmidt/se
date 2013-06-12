@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uid:App xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uid="http://uid/1.0" name="MyApp">
+  <has ie="//@hasIE.2"/>
+  <hasIE xsi:type="uid:Window" ieAssoc="//@has.0" name="win1"/>
+  <hasIE xsi:type="uid:Button"/>
+  <hasIE xsi:type="uid:Window" name="Win2"/>
+</uid:App>

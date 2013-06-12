@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uid_language/src" modelPluginID="uid_language"
+    modelName="Uid" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>uid.ecore</foreignModel>
+  <genPackages prefix="Uid" disposableProviderFactory="true" ecorePackage="uid.ecore#/">
+    <genClasses ecoreClass="uid.ecore#//Window"/>
+    <genClasses ecoreClass="uid.ecore#//IE">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//IE/ieAssoc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//IE/name"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//Button"/>
+    <genClasses ecoreClass="uid.ecore#//TextField"/>
+    <genClasses ecoreClass="uid.ecore#//List"/>
+    <genClasses ecoreClass="uid.ecore#//IEAssoc">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uid.ecore#//IEAssoc/ie"/>
+    </genClasses>
+    <genClasses ecoreClass="uid.ecore#//App">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//App/has"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uid.ecore#//App/hasIE"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uid.ecore#//App/name"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Types" disposableProviderFactory="true" ecorePackage="Types.ecore#/">
+    <genDataTypes ecoreDataType="Types.ecore#//Boolean"/>
+    <genDataTypes ecoreDataType="Types.ecore#//Integer"/>
+    <genDataTypes ecoreDataType="Types.ecore#//Real"/>
+    <genDataTypes ecoreDataType="Types.ecore#//String"/>
+    <genDataTypes ecoreDataType="Types.ecore#//UnlimitedNatural"/>
+  </genPackages>
+</genmodel:GenModel>
