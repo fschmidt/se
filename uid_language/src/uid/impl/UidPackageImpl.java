@@ -112,13 +112,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	private EClass labelEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unVisibeleAssocEClass = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -423,15 +416,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getunVisibeleAssoc() {
-		return unVisibeleAssocEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public UidFactory getUidFactory() {
 		return (UidFactory)getEFactoryInstance();
 	}
@@ -490,8 +474,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 
 		labelEClass = createEClass(LABEL);
 		createEAttribute(labelEClass, LABEL__TEXT);
-
-		unVisibeleAssocEClass = createEClass(UN_VISIBELE_ASSOC);
 	}
 
 	/**
@@ -533,7 +515,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		uieEClass.getESuperTypes().add(this.getIE());
 		containerEClass.getESuperTypes().add(this.getUIE());
 		labelEClass.getESuperTypes().add(this.getUIE());
-		unVisibeleAssocEClass.getESuperTypes().add(this.getIEAssoc());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(windowEClass, Window.class, "Window", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -571,8 +552,6 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 
 		initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLabel_Text(), theTypesPackage.getString(), "text", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(unVisibeleAssocEClass, unVisibeleAssoc.class, "unVisibeleAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

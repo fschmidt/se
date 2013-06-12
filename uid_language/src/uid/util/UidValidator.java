@@ -108,8 +108,6 @@ public class UidValidator extends EObjectValidator {
 				return validateContainer((Container)value, diagnostics, context);
 			case UidPackage.LABEL:
 				return validateLabel((Label)value, diagnostics, context);
-			case UidPackage.UN_VISIBELE_ASSOC:
-				return validateunVisibeleAssoc((unVisibeleAssoc)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -331,15 +329,6 @@ public class UidValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(label, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIE_nameNotNull(label, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateunVisibeleAssoc(unVisibeleAssoc unVisibeleAssoc, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(unVisibeleAssoc, diagnostics, context);
 	}
 
 	/**
