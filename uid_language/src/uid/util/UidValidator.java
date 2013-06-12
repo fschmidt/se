@@ -102,6 +102,12 @@ public class UidValidator extends EObjectValidator {
 				return validateApp((App)value, diagnostics, context);
 			case UidPackage.CHECK_BOX:
 				return validateCheckBox((CheckBox)value, diagnostics, context);
+			case UidPackage.UIE:
+				return validateUIE((UIE)value, diagnostics, context);
+			case UidPackage.CONTAINER:
+				return validateContainer((Container)value, diagnostics, context);
+			case UidPackage.LABEL:
+				return validateLabel((Label)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -265,6 +271,63 @@ public class UidValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(checkBox, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(checkBox, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIE_nameNotNull(checkBox, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUIE(UIE uie, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(uie, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(uie, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIE_nameNotNull(uie, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContainer(Container container, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(container, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(container, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIE_nameNotNull(container, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLabel(Label label, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(label, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(label, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIE_nameNotNull(label, diagnostics, context);
 		return result;
 	}
 

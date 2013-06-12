@@ -13,5 +13,5 @@ package uid;
  * @model
  * @generated
  */
-public interface List extends IE {
+public interface List extends UIE {
 } // List

@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link uid.Window#isMain <em>Main</em>}</li>
- *   <li>{@link uid.Window#getHasButton <em>Has Button</em>}</li>
+ *   <li>{@link uid.Window#getHasElements <em>Has Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,18 +51,18 @@ public interface Window extends IE {
 	void setMain(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Has Button</b></em>' reference list.
-	 * The list contents are of type {@link uid.Button}.
+	 * Returns the value of the '<em><b>Has Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link uid.IE}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Button</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Has Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Button</em>' reference list.
-	 * @see uid.UidPackage#getWindow_HasButton()
-	 * @model
+	 * @return the value of the '<em>Has Elements</em>' containment reference list.
+	 * @see uid.UidPackage#getWindow_HasElements()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Button> getHasButton();
+	EList<IE> getHasElements();
 } // Window

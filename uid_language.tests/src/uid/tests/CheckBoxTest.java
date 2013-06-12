@@ -13,7 +13,7 @@ import uid.UidFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CheckBoxTest extends IETest {
+public class CheckBoxTest extends UIETest {
 
 	/**
 	 * <!-- begin-user-doc -->

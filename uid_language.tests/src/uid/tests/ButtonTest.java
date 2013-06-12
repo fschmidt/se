@@ -13,7 +13,7 @@ import uid.UidFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ButtonTest extends IETest {
+public class ButtonTest extends UIETest {
 
 	/**
 	 * <!-- begin-user-doc -->

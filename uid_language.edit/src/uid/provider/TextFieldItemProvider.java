@@ -25,7 +25,7 @@ import uid.TextField;
  * @generated
  */
 public class TextFieldItemProvider
-	extends IEItemProvider
+	extends UIEItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

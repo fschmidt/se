@@ -16,7 +16,7 @@ import uid.UidPackage;
  *
  * @generated
  */
-public class TextFieldImpl extends IEImpl implements TextField {
+public class TextFieldImpl extends UIEImpl implements TextField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

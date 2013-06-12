@@ -64,6 +64,9 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 			case UidPackage.IE_ASSOC: return createIEAssoc();
 			case UidPackage.APP: return createApp();
 			case UidPackage.CHECK_BOX: return createCheckBox();
+			case UidPackage.UIE: return createUIE();
+			case UidPackage.CONTAINER: return createContainer();
+			case UidPackage.LABEL: return createLabel();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -147,6 +150,36 @@ public class UidFactoryImpl extends EFactoryImpl implements UidFactory {
 	public CheckBox createCheckBox() {
 		CheckBoxImpl checkBox = new CheckBoxImpl();
 		return checkBox;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UIE createUIE() {
+		UIEImpl uie = new UIEImpl();
+		return uie;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public uid.Container createContainer() {
+		ContainerImpl container = new ContainerImpl();
+		return container;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label createLabel() {
+		LabelImpl label = new LabelImpl();
+		return label;
 	}
 
 	/**

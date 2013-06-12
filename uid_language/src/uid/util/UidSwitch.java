@@ -82,6 +82,7 @@ public class UidSwitch<T> extends Switch<T> {
 			case UidPackage.BUTTON: {
 				Button button = (Button)theEObject;
 				T result = caseButton(button);
+				if (result == null) result = caseUIE(button);
 				if (result == null) result = caseIE(button);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -89,6 +90,7 @@ public class UidSwitch<T> extends Switch<T> {
 			case UidPackage.TEXT_FIELD: {
 				TextField textField = (TextField)theEObject;
 				T result = caseTextField(textField);
+				if (result == null) result = caseUIE(textField);
 				if (result == null) result = caseIE(textField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -96,6 +98,7 @@ public class UidSwitch<T> extends Switch<T> {
 			case UidPackage.LIST: {
 				List list = (List)theEObject;
 				T result = caseList(list);
+				if (result == null) result = caseUIE(list);
 				if (result == null) result = caseIE(list);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -115,7 +118,31 @@ public class UidSwitch<T> extends Switch<T> {
 			case UidPackage.CHECK_BOX: {
 				CheckBox checkBox = (CheckBox)theEObject;
 				T result = caseCheckBox(checkBox);
+				if (result == null) result = caseUIE(checkBox);
 				if (result == null) result = caseIE(checkBox);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.UIE: {
+				UIE uie = (UIE)theEObject;
+				T result = caseUIE(uie);
+				if (result == null) result = caseIE(uie);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.CONTAINER: {
+				Container container = (Container)theEObject;
+				T result = caseContainer(container);
+				if (result == null) result = caseUIE(container);
+				if (result == null) result = caseIE(container);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UidPackage.LABEL: {
+				Label label = (Label)theEObject;
+				T result = caseLabel(label);
+				if (result == null) result = caseUIE(label);
+				if (result == null) result = caseIE(label);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -240,6 +267,51 @@ public class UidSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCheckBox(CheckBox object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UIE</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UIE</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUIE(UIE object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContainer(Container object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Label</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLabel(Label object) {
 		return null;
 	}
 

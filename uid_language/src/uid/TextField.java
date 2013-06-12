@@ -13,5 +13,5 @@ package uid;
  * @model
  * @generated
  */
-public interface TextField extends IE {
+public interface TextField extends UIE {
 } // TextField

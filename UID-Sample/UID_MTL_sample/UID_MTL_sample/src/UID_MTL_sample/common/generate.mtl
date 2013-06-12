@@ -13,19 +13,18 @@
 [comment @main/]
 
 
-[file (anApp.name+'.java', false, 'UTF-8')]
+[file (anApp.name.toUpperFirst()+'.java', false, 'UTF-8')]
 
-class Main{
+class [anApp.name.toUpperFirst()/]{
 
 public static void main(String [getBrackets()/] args) {
 
 [for (window : Window| anApp.hasIE->select(oclIsTypeOf(Window)))]
 [if (window.main)]
    [window.name/] [window.name.toString().toLowerFirst()/] = new [window.name/]();
-[window.name.toString().toLowerFirst()/].setVisible(true);
+	[window.name.toString().toLowerFirst()/].setVisible(true);
 [/if]
 [/for] 
-
 
 }
 }
@@ -49,6 +48,9 @@ import java.awt.event.ActionEvent;
 import java.awt.Event;
 import java.awt.GridBagLayout;
 
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
 import javax.swing.KeyStroke;
 import javax.swing.JPanel;
 import javax.swing.JMenuItem;
@@ -58,26 +60,31 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 
+import sun.awt.HorizBagLayout;
+import sun.awt.VerticalBagLayout;
+
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
 public final class [window.name/] extends JFrame {
-
-private JPanel contentPanel = new JPanel();
 private JPanel navPanel = new JPanel();
 
-[for (ieAssoc: IEAssoc| window.ieAssoc)]
-private JButton [ieAssoc.ie.name.toLowerFirst()/]_[i/];
+[for (iElement : IE | window.hasElements)]
+[generateVariable(iElement)/]
+[/for]
+
+public  [window.name/] () {
+	this.setSize(400, 300);
+	navPanel.setLayout(new GridBagLayout());
+	this.setContentPane(navPanel);
+	this.setTitle("[window.name/]");
+[for (container : Container | window.hasElements->select(oclIsTypeOf(Container)))]
+	navPanel.add([container.name.toLowerFirst()/]);
+	[generateContainer(container)/]
 [/for]
 
 
-public  [window.name/] () {
 
-this.setSize(400, 300);
-navPanel.setLayout(new GridBagLayout());
-this.setContentPane(navPanel);
-
-        setTitle("[window.name/]");
 [for (ieAssoc: IEAssoc| window.ieAssoc)]
     [ieAssoc.ie.name.toLowerFirst()/]_[i/] = new JButton();
     [ieAssoc.ie.name.toLowerFirst()/]_[i/].setText("[ieAssoc.ie.name/]");
@@ -101,4 +108,43 @@ this.setContentPane(navPanel);
 [/file]
 [/template]
 
+[template public generateVariable (iElement : IE) ]
+[if (iElement.oclIsTypeOf(Container))]
+private JPanel [iElement.name.toLowerFirst()/] = new JPanel();
+[for (containerElement : UIE | iElement.oclAsType(Container).hasElements)]
+[generateVariable(containerElement)/]
+	[/for]
+[/if]
+[if (iElement.oclIsTypeOf(Button))]
+private JButton [iElement.name.toLowerFirst()/] = new JButton("[iElement.oclAsType(Button).text/]");
+[/if]
+[if (iElement.oclIsTypeOf(List))]
+[/if]
+[if (iElement.oclIsTypeOf(TextField))]
+private JTextField [iElement.name.toLowerFirst()/] = new JTextField();
+[/if]
+[if (iElement.oclIsTypeOf(CheckBox))]
+private JCheckBox [iElement.name.toLowerFirst()/] = new JCheckBox("[iElement.oclAsType(CheckBox).text/]");
+[/if]
+[if (iElement.oclIsTypeOf(Label))]
+private JLabel [iElement.name.toLowerFirst()/] = new JLabel("[iElement.oclAsType(Label).text/]");
+[/if]
+[/template]
+
 [query public getBrackets() : String = '[]'/]
+
+[template public generateContainer (container : Container) ]
+[if (container.AllignHorizontal)]
+// [container.name.toLowerFirst()/].setLayout(new HorizBagLayout());
+[else]
+// [container.name.toLowerFirst()/].setLayout(new VerticalBagLayout());
+[/if]
+[for (iElement : UIE | container.hasElements)]
+	[if (iElement.oclIsTypeOf(Container))]
+[generateContainer(iElement.oclAsType(Container))/]
+ 	[else]
+[container.name.toLowerFirst()/].add([iElement.name.toLowerFirst()/]);
+	[/if]
+[/for]
+
+[/template]

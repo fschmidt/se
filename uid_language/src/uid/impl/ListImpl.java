@@ -16,7 +16,7 @@ import uid.UidPackage;
  *
  * @generated
  */
-public class ListImpl extends IEImpl implements List {
+public class ListImpl extends UIEImpl implements List {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

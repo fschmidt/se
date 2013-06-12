@@ -18,6 +18,7 @@ import uid.App;
 import uid.Button;
 import uid.CheckBox;
 import uid.IEAssoc;
+import uid.Label;
 import uid.List;
 import uid.TextField;
 import uid.UidFactory;
@@ -87,6 +88,27 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * @generated
 	 */
 	private EClass checkBoxEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass uieEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass containerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass labelEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -186,7 +208,7 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWindow_HasButton() {
+	public EReference getWindow_HasElements() {
 		return (EReference)windowEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -224,6 +246,15 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 */
 	public EClass getButton() {
 		return buttonEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getButton_Text() {
+		return (EAttribute)buttonEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -321,6 +352,69 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCheckBox_Text() {
+		return (EAttribute)checkBoxEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUIE() {
+		return uieEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getContainer() {
+		return containerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getContainer_HasElements() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContainer_AllignHorizontal() {
+		return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLabel() {
+		return labelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLabel_Text() {
+		return (EAttribute)labelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UidFactory getUidFactory() {
 		return (UidFactory)getEFactoryInstance();
 	}
@@ -346,13 +440,14 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		// Create classes and their features
 		windowEClass = createEClass(WINDOW);
 		createEAttribute(windowEClass, WINDOW__MAIN);
-		createEReference(windowEClass, WINDOW__HAS_BUTTON);
+		createEReference(windowEClass, WINDOW__HAS_ELEMENTS);
 
 		ieEClass = createEClass(IE);
 		createEReference(ieEClass, IE__IE_ASSOC);
 		createEAttribute(ieEClass, IE__NAME);
 
 		buttonEClass = createEClass(BUTTON);
+		createEAttribute(buttonEClass, BUTTON__TEXT);
 
 		textFieldEClass = createEClass(TEXT_FIELD);
 
@@ -368,6 +463,16 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		createEAttribute(appEClass, APP__NAME);
 
 		checkBoxEClass = createEClass(CHECK_BOX);
+		createEAttribute(checkBoxEClass, CHECK_BOX__TEXT);
+
+		uieEClass = createEClass(UIE);
+
+		containerEClass = createEClass(CONTAINER);
+		createEReference(containerEClass, CONTAINER__HAS_ELEMENTS);
+		createEAttribute(containerEClass, CONTAINER__ALLIGN_HORIZONTAL);
+
+		labelEClass = createEClass(LABEL);
+		createEAttribute(labelEClass, LABEL__TEXT);
 	}
 
 	/**
@@ -402,21 +507,25 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 
 		// Add supertypes to classes
 		windowEClass.getESuperTypes().add(this.getIE());
-		buttonEClass.getESuperTypes().add(this.getIE());
-		textFieldEClass.getESuperTypes().add(this.getIE());
-		listEClass.getESuperTypes().add(this.getIE());
-		checkBoxEClass.getESuperTypes().add(this.getIE());
+		buttonEClass.getESuperTypes().add(this.getUIE());
+		textFieldEClass.getESuperTypes().add(this.getUIE());
+		listEClass.getESuperTypes().add(this.getUIE());
+		checkBoxEClass.getESuperTypes().add(this.getUIE());
+		uieEClass.getESuperTypes().add(this.getIE());
+		containerEClass.getESuperTypes().add(this.getUIE());
+		labelEClass.getESuperTypes().add(this.getUIE());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(windowEClass, Window.class, "Window", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWindow_Main(), ecorePackage.getEBoolean(), "main", null, 0, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWindow_HasButton(), this.getButton(), null, "hasButton", null, 0, -1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWindow_HasElements(), this.getIE(), null, "hasElements", null, 0, -1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ieEClass, uid.IE.class, "IE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIE_IeAssoc(), this.getIEAssoc(), null, "ieAssoc", null, 0, -1, uid.IE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIE_Name(), theTypesPackage.getString(), "name", null, 0, 1, uid.IE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getButton_Text(), theTypesPackage.getString(), "text", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textFieldEClass, TextField.class, "TextField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -432,6 +541,16 @@ public class UidPackageImpl extends EPackageImpl implements UidPackage {
 		initEAttribute(getApp_Name(), theTypesPackage.getString(), "name", null, 0, 1, App.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCheckBox_Text(), theTypesPackage.getString(), "text", null, 0, 1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(uieEClass, uid.UIE.class, "UIE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(containerEClass, uid.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContainer_HasElements(), this.getUIE(), null, "hasElements", null, 0, -1, uid.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainer_AllignHorizontal(), ecorePackage.getEBoolean(), "AllignHorizontal", "false", 0, 1, uid.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLabel_Text(), theTypesPackage.getString(), "text", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

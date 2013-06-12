@@ -8,8 +8,8 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="#//IE">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="main" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasButton" upperBound="-1"
-        eType="#//Button"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasElements" upperBound="-1"
+        eType="#//IE" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IE">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -22,9 +22,11 @@
         eType="#//IEAssoc"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//IE"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//IE"/>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//IE"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//UIE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//UIE"/>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//UIE"/>
   <eClassifiers xsi:type="ecore:EClass" name="IEAssoc">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ie" lowerBound="1" eType="#//IE"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType Types.ecore#//String"
@@ -37,5 +39,17 @@
         eType="#//IE" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType Types.ecore#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//IE"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//UIE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIE" eSuperTypes="#//IE"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//UIE">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasElements" upperBound="-1"
+        eType="#//UIE" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AllignHorizontal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//UIE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType Types.ecore#//String"/>
+  </eClassifiers>
 </ecore:EPackage>

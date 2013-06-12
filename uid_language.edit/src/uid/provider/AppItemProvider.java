@@ -198,6 +198,11 @@ public class AppItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(UidPackage.Literals.APP__HAS_IE,
+				 UidFactory.eINSTANCE.createUIE()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(UidPackage.Literals.APP__HAS_IE,
 				 UidFactory.eINSTANCE.createButton()));
 
 		newChildDescriptors.add
@@ -214,6 +219,16 @@ public class AppItemProvider
 			(createChildParameter
 				(UidPackage.Literals.APP__HAS_IE,
 				 UidFactory.eINSTANCE.createCheckBox()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(UidPackage.Literals.APP__HAS_IE,
+				 UidFactory.eINSTANCE.createContainer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(UidPackage.Literals.APP__HAS_IE,
+				 UidFactory.eINSTANCE.createLabel()));
 	}
 
 	/**

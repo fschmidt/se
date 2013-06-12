@@ -131,13 +131,13 @@ public interface UidPackage extends EPackage {
 	int WINDOW__MAIN = IE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Has Button</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOW__HAS_BUTTON = IE_FEATURE_COUNT + 1;
+	int WINDOW__HAS_ELEMENTS = IE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Window</em>' class.
@@ -147,6 +147,43 @@ public interface UidPackage extends EPackage {
 	 * @ordered
 	 */
 	int WINDOW_FEATURE_COUNT = IE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link uid.impl.UIEImpl <em>UIE</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.UIEImpl
+	 * @see uid.impl.UidPackageImpl#getUIE()
+	 * @generated
+	 */
+	int UIE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Ie Assoc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UIE__IE_ASSOC = IE__IE_ASSOC;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UIE__NAME = IE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>UIE</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UIE_FEATURE_COUNT = IE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.ButtonImpl <em>Button</em>}' class.
@@ -165,7 +202,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__IE_ASSOC = IE__IE_ASSOC;
+	int BUTTON__IE_ASSOC = UIE__IE_ASSOC;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -174,7 +211,16 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__NAME = IE__NAME;
+	int BUTTON__NAME = UIE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUTTON__TEXT = UIE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Button</em>' class.
@@ -183,7 +229,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON_FEATURE_COUNT = IE_FEATURE_COUNT + 0;
+	int BUTTON_FEATURE_COUNT = UIE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.TextFieldImpl <em>Text Field</em>}' class.
@@ -202,7 +248,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__IE_ASSOC = IE__IE_ASSOC;
+	int TEXT_FIELD__IE_ASSOC = UIE__IE_ASSOC;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -211,7 +257,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__NAME = IE__NAME;
+	int TEXT_FIELD__NAME = UIE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Text Field</em>' class.
@@ -220,7 +266,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD_FEATURE_COUNT = IE_FEATURE_COUNT + 0;
+	int TEXT_FIELD_FEATURE_COUNT = UIE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.ListImpl <em>List</em>}' class.
@@ -239,7 +285,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__IE_ASSOC = IE__IE_ASSOC;
+	int LIST__IE_ASSOC = UIE__IE_ASSOC;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -248,7 +294,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__NAME = IE__NAME;
+	int LIST__NAME = UIE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>List</em>' class.
@@ -257,7 +303,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_FEATURE_COUNT = IE_FEATURE_COUNT + 0;
+	int LIST_FEATURE_COUNT = UIE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uid.impl.IEAssocImpl <em>IE Assoc</em>}' class.
@@ -361,7 +407,7 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_BOX__IE_ASSOC = IE__IE_ASSOC;
+	int CHECK_BOX__IE_ASSOC = UIE__IE_ASSOC;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -370,7 +416,16 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_BOX__NAME = IE__NAME;
+	int CHECK_BOX__NAME = UIE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_BOX__TEXT = UIE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Check Box</em>' class.
@@ -379,7 +434,110 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_BOX_FEATURE_COUNT = IE_FEATURE_COUNT + 0;
+	int CHECK_BOX_FEATURE_COUNT = UIE_FEATURE_COUNT + 1;
+
+
+	/**
+	 * The meta object id for the '{@link uid.impl.ContainerImpl <em>Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.ContainerImpl
+	 * @see uid.impl.UidPackageImpl#getContainer()
+	 * @generated
+	 */
+	int CONTAINER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Ie Assoc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__IE_ASSOC = UIE__IE_ASSOC;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__NAME = UIE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Has Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__HAS_ELEMENTS = UIE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Allign Horizontal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ALLIGN_HORIZONTAL = UIE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_FEATURE_COUNT = UIE_FEATURE_COUNT + 2;
+
+
+	/**
+	 * The meta object id for the '{@link uid.impl.LabelImpl <em>Label</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uid.impl.LabelImpl
+	 * @see uid.impl.UidPackageImpl#getLabel()
+	 * @generated
+	 */
+	int LABEL = 10;
+
+	/**
+	 * The feature id for the '<em><b>Ie Assoc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL__IE_ASSOC = UIE__IE_ASSOC;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL__NAME = UIE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL__TEXT = UIE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Label</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL_FEATURE_COUNT = UIE_FEATURE_COUNT + 1;
 
 
 	/**
@@ -404,15 +562,15 @@ public interface UidPackage extends EPackage {
 	EAttribute getWindow_Main();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uid.Window#getHasButton <em>Has Button</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uid.Window#getHasElements <em>Has Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Button</em>'.
-	 * @see uid.Window#getHasButton()
+	 * @return the meta object for the containment reference list '<em>Has Elements</em>'.
+	 * @see uid.Window#getHasElements()
 	 * @see #getWindow()
 	 * @generated
 	 */
-	EReference getWindow_HasButton();
+	EReference getWindow_HasElements();
 
 	/**
 	 * Returns the meta object for class '{@link uid.IE <em>IE</em>}'.
@@ -455,6 +613,17 @@ public interface UidPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getButton();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.Button#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see uid.Button#getText()
+	 * @see #getButton()
+	 * @generated
+	 */
+	EAttribute getButton_Text();
 
 	/**
 	 * Returns the meta object for class '{@link uid.TextField <em>Text Field</em>}'.
@@ -562,6 +731,80 @@ public interface UidPackage extends EPackage {
 	EClass getCheckBox();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uid.CheckBox#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see uid.CheckBox#getText()
+	 * @see #getCheckBox()
+	 * @generated
+	 */
+	EAttribute getCheckBox_Text();
+
+	/**
+	 * Returns the meta object for class '{@link uid.UIE <em>UIE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>UIE</em>'.
+	 * @see uid.UIE
+	 * @generated
+	 */
+	EClass getUIE();
+
+	/**
+	 * Returns the meta object for class '{@link uid.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Container</em>'.
+	 * @see uid.Container
+	 * @generated
+	 */
+	EClass getContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uid.Container#getHasElements <em>Has Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Has Elements</em>'.
+	 * @see uid.Container#getHasElements()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_HasElements();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.Container#isAllignHorizontal <em>Allign Horizontal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Allign Horizontal</em>'.
+	 * @see uid.Container#isAllignHorizontal()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EAttribute getContainer_AllignHorizontal();
+
+	/**
+	 * Returns the meta object for class '{@link uid.Label <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Label</em>'.
+	 * @see uid.Label
+	 * @generated
+	 */
+	EClass getLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uid.Label#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see uid.Label#getText()
+	 * @see #getLabel()
+	 * @generated
+	 */
+	EAttribute getLabel_Text();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -602,12 +845,12 @@ public interface UidPackage extends EPackage {
 		EAttribute WINDOW__MAIN = eINSTANCE.getWindow_Main();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Button</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Has Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WINDOW__HAS_BUTTON = eINSTANCE.getWindow_HasButton();
+		EReference WINDOW__HAS_ELEMENTS = eINSTANCE.getWindow_HasElements();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.IEImpl <em>IE</em>}' class.
@@ -644,6 +887,14 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BUTTON = eINSTANCE.getButton();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUTTON__TEXT = eINSTANCE.getButton_Text();
 
 		/**
 		 * The meta object literal for the '{@link uid.impl.TextFieldImpl <em>Text Field</em>}' class.
@@ -734,6 +985,68 @@ public interface UidPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHECK_BOX = eINSTANCE.getCheckBox();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHECK_BOX__TEXT = eINSTANCE.getCheckBox_Text();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.UIEImpl <em>UIE</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.UIEImpl
+		 * @see uid.impl.UidPackageImpl#getUIE()
+		 * @generated
+		 */
+		EClass UIE = eINSTANCE.getUIE();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.ContainerImpl <em>Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.ContainerImpl
+		 * @see uid.impl.UidPackageImpl#getContainer()
+		 * @generated
+		 */
+		EClass CONTAINER = eINSTANCE.getContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__HAS_ELEMENTS = eINSTANCE.getContainer_HasElements();
+
+		/**
+		 * The meta object literal for the '<em><b>Allign Horizontal</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTAINER__ALLIGN_HORIZONTAL = eINSTANCE.getContainer_AllignHorizontal();
+
+		/**
+		 * The meta object literal for the '{@link uid.impl.LabelImpl <em>Label</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uid.impl.LabelImpl
+		 * @see uid.impl.UidPackageImpl#getLabel()
+		 * @generated
+		 */
+		EClass LABEL = eINSTANCE.getLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LABEL__TEXT = eINSTANCE.getLabel_Text();
 
 	}
 

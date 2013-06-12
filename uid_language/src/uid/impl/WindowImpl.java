@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import uid.IE;
 import uid.Button;
 import uid.UidPackage;
 import uid.Window;
@@ -25,7 +26,7 @@ import uid.Window;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uid.impl.WindowImpl#isMain <em>Main</em>}</li>
- *   <li>{@link uid.impl.WindowImpl#getHasButton <em>Has Button</em>}</li>
+ *   <li>{@link uid.impl.WindowImpl#getHasElements <em>Has Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,15 +53,14 @@ public class WindowImpl extends IEImpl implements Window {
 	protected boolean main = MAIN_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHasButton() <em>Has Button</em>}' reference list.
+	 * The cached value of the '{@link #getHasElements() <em>Has Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasButton()
+	 * @see #getHasElements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Button> hasButton;
-
+	protected EList<IE> hasElements;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,11 +106,25 @@ public class WindowImpl extends IEImpl implements Window {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Button> getHasButton() {
-		if (hasButton == null) {
-			hasButton = new EObjectResolvingEList<Button>(Button.class, this, UidPackage.WINDOW__HAS_BUTTON);
+	public EList<IE> getHasElements() {
+		if (hasElements == null) {
+			hasElements = new EObjectContainmentEList<IE>(IE.class, this, UidPackage.WINDOW__HAS_ELEMENTS);
 		}
-		return hasButton;
+		return hasElements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UidPackage.WINDOW__HAS_ELEMENTS:
+				return ((InternalEList<?>)getHasElements()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -123,8 +137,8 @@ public class WindowImpl extends IEImpl implements Window {
 		switch (featureID) {
 			case UidPackage.WINDOW__MAIN:
 				return isMain();
-			case UidPackage.WINDOW__HAS_BUTTON:
-				return getHasButton();
+			case UidPackage.WINDOW__HAS_ELEMENTS:
+				return getHasElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -141,9 +155,9 @@ public class WindowImpl extends IEImpl implements Window {
 			case UidPackage.WINDOW__MAIN:
 				setMain((Boolean)newValue);
 				return;
-			case UidPackage.WINDOW__HAS_BUTTON:
-				getHasButton().clear();
-				getHasButton().addAll((Collection<? extends Button>)newValue);
+			case UidPackage.WINDOW__HAS_ELEMENTS:
+				getHasElements().clear();
+				getHasElements().addAll((Collection<? extends IE>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -160,8 +174,8 @@ public class WindowImpl extends IEImpl implements Window {
 			case UidPackage.WINDOW__MAIN:
 				setMain(MAIN_EDEFAULT);
 				return;
-			case UidPackage.WINDOW__HAS_BUTTON:
-				getHasButton().clear();
+			case UidPackage.WINDOW__HAS_ELEMENTS:
+				getHasElements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -177,8 +191,8 @@ public class WindowImpl extends IEImpl implements Window {
 		switch (featureID) {
 			case UidPackage.WINDOW__MAIN:
 				return main != MAIN_EDEFAULT;
-			case UidPackage.WINDOW__HAS_BUTTON:
-				return hasButton != null && !hasButton.isEmpty();
+			case UidPackage.WINDOW__HAS_ELEMENTS:
+				return hasElements != null && !hasElements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

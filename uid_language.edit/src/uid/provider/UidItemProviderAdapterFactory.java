@@ -256,6 +256,75 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uid.UIE} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UIEItemProvider uieItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.UIE}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUIEAdapter() {
+		if (uieItemProvider == null) {
+			uieItemProvider = new UIEItemProvider(this);
+		}
+
+		return uieItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Container} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContainerItemProvider containerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Container}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContainerAdapter() {
+		if (containerItemProvider == null) {
+			containerItemProvider = new ContainerItemProvider(this);
+		}
+
+		return containerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uid.Label} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LabelItemProvider labelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uid.Label}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLabelAdapter() {
+		if (labelItemProvider == null) {
+			labelItemProvider = new LabelItemProvider(this);
+		}
+
+		return labelItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -362,6 +431,9 @@ public class UidItemProviderAdapterFactory extends UidAdapterFactory implements 
 		if (ieAssocItemProvider != null) ieAssocItemProvider.dispose();
 		if (appItemProvider != null) appItemProvider.dispose();
 		if (checkBoxItemProvider != null) checkBoxItemProvider.dispose();
+		if (uieItemProvider != null) uieItemProvider.dispose();
+		if (containerItemProvider != null) containerItemProvider.dispose();
+		if (labelItemProvider != null) labelItemProvider.dispose();
 	}
 
 }

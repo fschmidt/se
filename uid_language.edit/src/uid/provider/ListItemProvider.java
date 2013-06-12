@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class ListItemProvider
-	extends IEItemProvider
+	extends UIEItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
