@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<profiler:ProfileResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:profiler="http://www.eclipse.org/acceleo/profiler/3.0">
+  <entries xsi:type="profiler:LoopProfileEntry" duration="2" count="1" percentage="100.0" createTime="1337076799607">
+    <callees xsi:type="profiler:LoopProfileEntry" duration="2" count="1" percentage="100.0" createTime="1337076799607">
+      <callees xsi:type="profiler:LoopProfileEntry" duration="1" count="1" percentage="50.0" createTime="1337076799607">
+        <monitored href="../BHT_MD_ATS_3_UMLProfile/bin/BHT_MD_ATS_3_UMLProfile/common/generateMVC.emtl#/0/generateClass/@body.0/@iterSet"/>
+        <loopElements duration="1" count="1" percentage="50.0" createTime="1337076799607"/>
+      </callees>
+      <callees duration="1" percentage="50.0" createTime="1337076804428">
+        <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+      </callees>
+      <monitored href="../BHT_MD_ATS_3_UMLProfile/bin/BHT_MD_ATS_3_UMLProfile/common/generateMVC.emtl#/0/generateClass/@body.0"/>
+      <loopElements count="1" createTime="1337076799607"/>
+    </callees>
+    <monitored href="../BHT_MD_ATS_3_UMLProfile/bin/BHT_MD_ATS_3_UMLProfile/common/generateMVC.emtl#/0/generateClass"/>
+    <loopElements count="1" createTime="1337076799607"/>
+  </entries>
+</profiler:ProfileResource>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Profile="http:///schemas/Profile/_H3QU8IupEeCPA-8-VZVBqw/15" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Profile/_H3QU8IupEeCPA-8-VZVBqw/15 file:/home/roland/workspace_MDA/BHT_MD_ATS_3_UMLProfile/model/MVC.profile.uml#_H3UmYIupEeCPA-8-VZVBqw">
+  <uml:Model xmi:id="_bzpBAJ5wEeGyLMAMV2OXaw" name="Model">
+    <packageImport xmi:id="_bzpBAZ5wEeGyLMAMV2OXaw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_giGUMJ5wEeGyLMAMV2OXaw" name="Student"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lmxvAJ5wEeGyLMAMV2OXaw" name="StudentList">
+      <ownedAttribute xmi:id="_z4x1AJ5wEeGyLMAMV2OXaw" name="DetailButton" type="_GFakkJ5xEeGyLMAMV2OXaw"/>
+      <ownedAttribute xmi:id="_zZPEYJ6TEeGyLMAMV2OXaw" name="List"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sv2qgJ5wEeGyLMAMV2OXaw" name="StudentDialog"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_x-QCAJ5wEeGyLMAMV2OXaw" name="DetailButton"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_GFakkJ5xEeGyLMAMV2OXaw" name="Button"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LrOWgJ5xEeGyLMAMV2OXaw" name="StudentController">
+      <ownedOperation xmi:id="_RvowAJ5xEeGyLMAMV2OXaw" name="DetailButtonHandler"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wdym8J6TEeGyLMAMV2OXaw" name="List"/>
+    <profileApplication xmi:id="_gALS4J5wEeGyLMAMV2OXaw">
+      <eAnnotations xmi:id="_gBZa4J5wEeGyLMAMV2OXaw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../BHT_MD_ATS_3_UMLProfile/model/MVC.profile.uml#_H3UmYIupEeCPA-8-VZVBqw"/>
+      </eAnnotations>
+      <appliedProfile href="../../BHT_MD_ATS_3_UMLProfile/model/MVC.profile.uml#_m-eYgHWYEeCRk_WNlXBnKg"/>
+    </profileApplication>
+  </uml:Model>
+  <Profile:Model xmi:id="_j9gEEJ5wEeGyLMAMV2OXaw" base_Class="_giGUMJ5wEeGyLMAMV2OXaw"/>
+  <Profile:View xmi:id="_oKsdQJ5wEeGyLMAMV2OXaw" base_Class="_lmxvAJ5wEeGyLMAMV2OXaw" model="_j9gEEJ5wEeGyLMAMV2OXaw"/>
+  <Profile:View xmi:id="_vXkToJ5wEeGyLMAMV2OXaw" base_Class="_sv2qgJ5wEeGyLMAMV2OXaw" model="_j9gEEJ5wEeGyLMAMV2OXaw"/>
+  <Profile:InteractionElement xmi:id="_08mpgJ5wEeGyLMAMV2OXaw" base_Property="_z4x1AJ5wEeGyLMAMV2OXaw"/>
+  <Profile:Controller xmi:id="_Nj9ZwJ5xEeGyLMAMV2OXaw" base_Class="_LrOWgJ5xEeGyLMAMV2OXaw" model="_j9gEEJ5wEeGyLMAMV2OXaw" view="_oKsdQJ5wEeGyLMAMV2OXaw _vXkToJ5wEeGyLMAMV2OXaw"/>
+  <Profile:EventHandler xmi:id="_T4QCUJ5xEeGyLMAMV2OXaw" base_Operation="_RvowAJ5xEeGyLMAMV2OXaw" interactionElement="_08mpgJ5wEeGyLMAMV2OXaw" view="_vXkToJ5wEeGyLMAMV2OXaw"/>
+  <Profile:InteractionElement xmi:id="_016dwJ6TEeGyLMAMV2OXaw" base_Property="_zZPEYJ6TEeGyLMAMV2OXaw"/>
+</xmi:XMI>
