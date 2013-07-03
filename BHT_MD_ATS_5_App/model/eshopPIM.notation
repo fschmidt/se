@@ -169,7 +169,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3CzeFNi-EeKPXLjyXZV_Vw"/>
     </children>
     <element xmi:type="uml:Class" href="eshopPIM.uml#_3CQEcNi-EeKPXLjyXZV_Vw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3CvModi-EeKPXLjyXZV_Vw" x="519" y="265"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3CvModi-EeKPXLjyXZV_Vw" x="565" y="275"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_poqtgaGZEeGnlZCpLYrlzg"/>
   <element xmi:type="uml:Model" href="eshopPIM.uml#_pocrEKGZEeGnlZCpLYrlzg"/>
@@ -203,13 +203,13 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_o7MYQdjAEeKPXLjyXZV_Vw" y="-20"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_o7MYQtjAEeKPXLjyXZV_Vw" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_o7MYQ9jAEeKPXLjyXZV_Vw" y="20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_o7MYQ9jAEeKPXLjyXZV_Vw" x="10" y="-60"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_o7MYRNjAEeKPXLjyXZV_Vw" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_o7M_UNjAEeKPXLjyXZV_Vw" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_o7M_UNjAEeKPXLjyXZV_Vw" x="4" y="-31"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_o7M_UdjAEeKPXLjyXZV_Vw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_o7M_UtjAEeKPXLjyXZV_Vw" y="20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_o7M_UtjAEeKPXLjyXZV_Vw" x="18" y="-33"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_o7M_U9jAEeKPXLjyXZV_Vw" type="6033">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_o7M_VNjAEeKPXLjyXZV_Vw" y="20"/>
